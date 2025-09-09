@@ -1,0 +1,82 @@
+﻿1. The project idea
+My project idea is a budget and expenses tracker API. This system is meant to help users manage their finances, keep track of their spending, make budgets for various spending categories and set aside money for savings. This idea particularly resonates with me as I usually have a hard time managing my spending and finances in general.
+
+
+2. Features
+MVP (Minimum Viable Product)
+* User Authentication (sign up, login, JWT tokens).
+
+* CRUD operations for expenses (amount, category, date, description).
+
+* CRUD for income entries.
+
+* Categories (Food, Rent, Transport, etc.).
+
+* Budgeting: set a monthly budget limit per category.
+
+* Reports:
+
+   * Total expenses per month.
+
+   * Remaining budget.
+
+   * Breakdown per category.
+Stretch Features
+      * Export reports (CSV / PDF).
+
+      * Notifications when spending exceeds budget.
+
+      * Integration with an external API (e.g., currency conversion API if tracking in multiple currencies).
+
+      * Dashboard-ready endpoints (summary stats for charts).
+
+
+3. Roadmap
+Phase 1: Setup
+         * Create Django project (budget_tracker).
+
+         * Setup database.
+(Timeline: 1 day)
+
+Phase 2: Users & Auth
+            * Create users app.
+
+            * Custom User model (optional) or extend default User.
+
+            * JWT authentication endpoints.
+(Timeline: 1 - 2 days)
+
+Phase 3: Core Models
+               * Create categories app (seed some defaults: Food, Rent, Transport).
+
+               * Create expenses app (with serializer, viewset, router).
+
+               * Create income app.
+(Timeline: 1 - 2 days)
+
+Phase 4: Budgets
+                  * Create budgets app.
+
+                  * Connect budgets to categories + users.
+
+                  * Add logic: check if spending exceeds budget.
+(Timeline: 2 - 3 days)
+
+Phase 5: Reports
+                     * Aggregation queries for monthly totals.
+
+                     * Endpoint for category breakdown.
+
+                     * Endpoint for income vs expenses.
+(Timeline: 3 - 4 days)
+
+Phase 6: Polish
+                        * Add pagination, filtering (e.g., expenses by month).
+
+                        * Write unit tests for critical endpoints.
+(Timeline: 1 week)
+
+Phase 7 (Optional Extras):
+                           * Currency conversion API integration.
+
+                           * Export CSV/PDF.
