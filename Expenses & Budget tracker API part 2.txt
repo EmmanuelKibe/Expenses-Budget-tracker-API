@@ -1,0 +1,56 @@
+﻿ERD Design for my project’s database 
+
+
+  
+
+
+
+
+
+API Endpoints
+
+
+Users
+* POST /api/auth/register/ → create account.
+
+* POST /api/auth/login/ → obtain JWT.
+
+Expenses
+   * GET /api/expenses/ → list all expenses (user-specific).
+
+   * POST /api/expenses/ → add expense.
+
+   * GET /api/expenses/{id}/ → get one expense.
+
+   * PUT/PATCH /api/expenses/{id}/ → update.
+
+   * DELETE /api/expenses/{id}/ → delete.
+
+Income
+      * GET /api/income/ → list all  (user-specific).
+
+      * POST /api/income/ → add .
+
+      * GET /api/income/{id}/ → get one income.
+
+      * PUT/PATCH /api/income/{id}/ → update.
+
+      * DELETE /api/income/{id}/ → delete.
+
+Budgets
+         * GET /api/budgets/ → list budgets.
+
+         * POST /api/budgets/ → create a new budget.
+
+         * GET /api/budgets/{id}/ → get one.
+
+         * PUT/PATCH /api/budgets/{id}/ → update.
+
+         * DELETE /api/budgets/{id}/ → delete.
+
+Reports
+            * GET /api/reports/monthly/ → total expenses & income per month.
+
+            * GET /api/reports/category/ → breakdown of expenses per category.
+
+            * GET /api/reports/summary/ → income vs expenses vs budget.
