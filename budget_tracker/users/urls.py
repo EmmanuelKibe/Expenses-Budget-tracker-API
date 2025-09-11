@@ -5,7 +5,7 @@ from .views import RegisterView, UserDetailView
 urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),
     path("login/", TokenObtainPairView.as_view(), name="login"),
-    path("refresh/", TokenRefreshView.as_view(), name="refresh"),
+    path("refresh/", TokenRefreshView.as_view(), name="refresh"), #input the refresh token to get a new access token
     path("me/", UserDetailView.as_view(), name="user_detail"),
 ]
 
