@@ -1,8 +1,26 @@
 from rest_framework import serializers
-from .models import Expense
+from .models import Expense, Category
+
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = ['id', 'name']  # user will be filled in automatically
+        read_only_fields = ['id']
+
+    def create(self, validated_data):
+        user = self.context['request'].user
+        validated_data['user'] = user
+        return super().create(validated_data)
 
 class ExpenseSerializer(serializers.ModelSerializer):
     warning = serializers.SerializerMethodField(read_only=True)
+    category = CategorySerializer(read_only=True)  # to show category details
+    category_id = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        source="category",
+        write_only=True,
+        required=False
+    )
 
     class Meta:
         model = Expense
@@ -31,3 +49,6 @@ class ExpenseSerializer(serializers.ModelSerializer):
             return "Warning: This budget has been exceeded."
         return None
 
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data)
