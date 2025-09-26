@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'budget',
     'expenses',
+    'reports',
 ]
 
 MIDDLEWARE = [
