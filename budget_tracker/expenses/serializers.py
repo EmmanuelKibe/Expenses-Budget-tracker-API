@@ -24,8 +24,10 @@ class ExpenseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Expense
-        fields = '__all__'
-        read_only_fields = ['user', 'warning']
+        fields = ['id', 'name', 'amount', 'date', 'created_at', 'updated_at',
+                'budget', 'user', 'category', 'category_id', 'warning']
+        read_only_fields = ['id', 'user', 'warning', 'created_at', 'updated_at']
+
 
     def validate(self, data):
         amount = data.get('amount')
